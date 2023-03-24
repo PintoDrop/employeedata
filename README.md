@@ -67,4 +67,4 @@ GIVEN a command-line application that accepts user input
 
 ## Screen-Shots
 
-![Landing Page]()
+![Screen Shot]()
