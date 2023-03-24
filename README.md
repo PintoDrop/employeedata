@@ -19,7 +19,7 @@
 
 ## Installation
 
-You will need to install node npm, inquirer and MySQL2 after cloning the repo
+You will need to install node, inquirer, console.table and MySQL2 after cloning the repo
 
 ## License
 
