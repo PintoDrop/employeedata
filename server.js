@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 const PORT = 3001;
 const path = require ("path");
 const fs = require ("fs");
-const inquierer = require("inquirer");
+const inquirer = require("inquirer");
 const console = require("console.table");
 
 
