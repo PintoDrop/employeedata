@@ -6,21 +6,21 @@ const inquirer = require("inquirer");
 const express = require("express");
 const console = require("console.table");
 // const app = require("express");
-const db = mysql.createConnection('mysql://root:JuiceHead2&&@localhost:3306/employeedata_db')
+// const db = mysql.createConnection('mysql://root:JuiceHead2&&@localhost:3306/employeedata_db')
 
 // app.use(express.json());
 // app.use(express.static(path.join(__dirname, "public")));
 // app.use(express.urlencoded({ extended: true }));
 
-// const db = mysql.createConnection(
-//   {
-//     host: "localhost",
-//     user: "root",
-//     password: "JuiceHead2&&",
-//     database: "employeedata_db",
-//   },
-//   console.log(`Connected to the employeedata_db database.`)
-//   );
+const db = mysql.createConnection(
+  {
+    host: "localhost",
+    user: "root",
+    password: "JuiceHead2&&",
+    database: "employeedata_db",
+  },
+  // console.log(`Connected to the employeedata_db database.`)
+  );
   
 
 
@@ -82,32 +82,79 @@ inquirer
       {
         message: "What department do you want to add?",
         type: "input",
-        name: "dept",
-      },
-    ]);
+        name: "name"
+      }
+    ])
+    .then(department => {
+      db.query('INSERT INTO departments SET ?', department)
+      // console.log('Added department')
+    })
   };
 
-  const addRole = () => {
-    // console.log("Adding a role");
-    inquirer.prompt([
-      {
-        message: "What role would you like to add?",
-        type: "input",
-        name: "role",
-      },
-    ]);
-  };
+
   
   const addEmployee = () => {
     // console.log("Going to add an employee");
-    inquirer.prompt([
-      {
-        message: "What is the name of the employee you want to add?",
-        type: "input",
-        name: "employee",
-      },
-    ]);
+    inquirer
+      .prompt([
+        {
+          message: "What is the first name of the employee you want to add?",
+          type: "input",
+          name: "first_name",
+        },
+        {
+          message: "What is the last name of the employee you want to add?",
+          type: "input",
+          name: "last_name",
+        },
+        {
+          message: "What is the first name of the employee you want to add?",
+          type: "input",
+          name: "first_name",
+        },
+        {
+          message: "What is the role of the employee you want to add?",
+          type: "input",
+          name: "role_id",
+        },
+        {
+          message: "Is there a manager ID?",
+          type: "input",
+          name: "manager_id",
+        },
+      ])
+      .then((employee) => {
+
+      });
   };
+  
+  const addRole = () => {
+    // console.log("Adding a role");
+    inquirer
+      .prompt([
+        {
+          message: "What role title would you like to add?",
+          type: "input",
+          name: "title",
+        },
+        {
+          message: "What is the salary of this title?",
+          type: "input",
+          name: "salary",
+        },
+        {
+          message: "Which department is this role in?",
+          type: "input",
+          name: "department_id",
+        },
+      ])
+      .then(role => {
+        // console.log(role)
+        // db.query("INSERT INTO roles SET ?", role);
+        // console.log('Added role title')
+      });
+  };
+
 
   const updateEmployee = () => {
     // console.log("Going to update existing employee");
