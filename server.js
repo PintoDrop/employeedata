@@ -20,8 +20,8 @@ const db = mysql.createConnection('mysql://root:JuiceHead2&&@localhost:3306/empl
 //     database: "employeedata_db",
 //   },
 //   console.log(`Connected to the employeedata_db database.`)
-// );
-
+//   );
+  
 
 
 inquirer
@@ -77,7 +77,7 @@ inquirer
   });
 
   const addDepartment = () => {
-    console.log("Going to add a deparment");
+    // console.log("Going to add a deparment");
     inquirer.prompt([
       {
         message: "What department do you want to add?",
@@ -88,7 +88,7 @@ inquirer
   };
 
   const addRole = () => {
-    console.log("Adding a role");
+    // console.log("Adding a role");
     inquirer.prompt([
       {
         message: "What role would you like to add?",
@@ -99,7 +99,7 @@ inquirer
   };
   
   const addEmployee = () => {
-    console.log("Going to add an employee");
+    // console.log("Going to add an employee");
     inquirer.prompt([
       {
         message: "What is the name of the employee you want to add?",
@@ -110,18 +110,19 @@ inquirer
   };
 
   const updateEmployee = () => {
-    console.log("Going to update existing employee");
+    // console.log("Going to update existing employee");
     inquirer.prompt([
       {
         message: "Which employee would you like to update?",
         type: "input",
         name: "dept",
       },
+      // .then function for what to do next
     ]);
   };
 
   const viewDepartments = () => {
-    console.log("Going to view the deparments");
+    // console.log("Going to view the deparments");
     inquirer.prompt([
       {
      
@@ -130,7 +131,7 @@ inquirer
   };
   
   const viewEmployees = () => {
-    console.log("Viewing employees");
+    // console.log("Viewing employees");
     inquirer.prompt([
       {
 
@@ -139,7 +140,7 @@ inquirer
   };
   
   const viewRoles = () => {
-    console.log("Viewing roles");
+    // console.log("Viewing roles");
     inquirer.prompt([
       {
 
