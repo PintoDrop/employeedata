@@ -15,7 +15,11 @@
 
 ## Description
 
+For this assignment I was tasked with creating a table an employer could use to easily see their employees and roles that work there. The user will be able to navigate the options so they can view all roles, departments and employees and be able to edit them to add or delete any data. This will make it easier for the company to organize and look through the data of their company.
+
 ## Usage
+
+The user will be able to go through prompts to be able to view data pertaining to their company. The user can see all of their employees, their roles as well as the departments they have in their business. This will allow the user to organize and see what data their is that pertains to their employees.
 
 ## Installation
 
