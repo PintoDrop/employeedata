@@ -23,10 +23,10 @@ const db = mysql.createConnection(
   console.log("Connected to the employeedata_db database.")
 );
 
-// need to figure out the viewing tables in console
-// console.logs reading as function
+// need to figure out the viewing tables in console ALMOST DONE
+// console.logs reading as function DONE
 // adding via terminal/editing updating
-// returning to questions once prompts are finished.
+// returning to questions once prompts are finished. DONE
 
 function init() {
   inquirer
@@ -41,7 +41,7 @@ function init() {
           "Add a department",
           "Add a role",
           "Add an employee",
-          "Update Employee Role",
+          "Update employee Role",
         ],
         name: "option",
       },
@@ -160,7 +160,7 @@ const addRole = () => {
 };
 
 const updateEmployee = () => {
-  // console.log("Going to update existing employee");
+  console.log("Updating an existing employee");
   inquirer
     .prompt([
       {
@@ -174,9 +174,9 @@ const updateEmployee = () => {
 };
 
 const viewDepartments = () => {
-  console.log("Viewing the deparments");
+  console.log("Viewing the departments");
   db.promise()
-    .query("SELECT name FROM departments")
+    .query("SELECT * FROM departments")
     .then(([deps]) => {
       console.table(deps);
     })
@@ -186,30 +186,30 @@ const viewDepartments = () => {
     });
 };
 
-const viewEmployees = () => {
-  console.log("Viewing the employees");
-  db.promise()
-    .query("SELECT * FROM employees")
-    .then(([test]) => {
-      console.table(test);
-    })
-    .then(() => init())
-    .catch((error) => {
-      console.error(error);
-    });
-};
 
 const viewRoles = () => {
   console.log("Viewing roles");
   db.promise()
-    .query("SELECT * FROM roles")
-    .then(([rols]) => {
-      console.table(rols);
+  .query("SELECT * FROM roles")
+  .then(([rols]) => {
+    console.table(rols);
+  })
+  .then(() => init())
+  .catch((error) => {
+    console.error(error);
+  });
+};
+
+const viewEmployees = () => {
+  console.log("Viewing the employees");
+  db.promise()
+    .query("SELECT * FROM employees")
+    .then(([emp]) => {
+      console.table(emp);
     })
     .then(() => init())
     .catch((error) => {
       console.error(error);
     });
 };
-
 // app.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
