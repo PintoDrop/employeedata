@@ -32,7 +32,28 @@ inquirer
 
   .then((begin) => {
     console.log(begin);
+    switch(begin) {
+      case 'Add a department':
+        addDepartment()
+        break
+
+      case 'Add a role':
+        addRole()
+        break
+
+      case 'Add an employee':
+        addEmployee()
+        break
+
+      case 'Update Employee Role':
+        updateEmployee()
+        break
+    }
   });
+
+  const addDepartment = () => {
+    console.log('Tried to add a deparment')
+  }
 
 const db = mysql.createConnection(
   {
