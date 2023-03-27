@@ -1,14 +1,12 @@
 const mysql = require("mysql2");
 const PORT = 3001;
-const path = require ("path");
-const fs = require ("fs");
+const path = require("path");
+const fs = require("fs");
 const inquirer = require("inquirer");
 const express = require("express");
 const console = require("console.table");
-const app = require('express');
-
-
-
+const app = require("express");
+const db = mysql.createConnection('mysql://root:rootroot@localhost:3306/employeedata_db')
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -24,6 +22,5 @@ const db = mysql.createConnection(
   },
   console.log(`Connected to the classlist_db database.`)
 );
-
 
 app.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
