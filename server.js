@@ -41,7 +41,7 @@ function init() {
           "Add a department",
           "Add a role",
           "Add an employee",
-          "Update employee Role",
+          "Update employee role",
         ],
         name: "option",
       },
@@ -61,8 +61,8 @@ function init() {
           addEmployee();
           break;
 
-        case "Update Employee Role":
-          updateEmployee();
+        case "Update employee role":
+          updateEmployeeRole();
           break;
 
         case "View all departments":
@@ -159,14 +159,14 @@ const addRole = () => {
     .then(() => init());
 };
 
-const updateEmployee = () => {
-  console.log("Updating an existing employee");
+const updateEmployeeRole = () => {
+  console.log("Updating an existing employee role");
   inquirer
     .prompt([
       {
         message: "Which employee would you like to update?",
         type: "input",
-        name: "",
+        name: "role_id",
       },
       // .then function for what to do next
     ])
