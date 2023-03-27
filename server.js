@@ -173,6 +173,20 @@ const updateEmployee = () => {
     .then(() => init());
 };
 
+const viewEmployees = () => {
+  // console.log("Viewing the employees");
+  db.promise()
+    .query("SELECT * FROM employees")
+    .then(([emp]) => {
+      console.table(emp);
+    })
+    .then(() => init())
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+
 const viewDepartments = () => {
   console.log("Viewing the departments");
   db.promise()
@@ -200,16 +214,4 @@ const viewRoles = () => {
   });
 };
 
-const viewEmployees = () => {
-  console.log("Viewing the employees");
-  db.promise()
-    .query("SELECT * FROM employees")
-    .then(([emp]) => {
-      console.table(emp);
-    })
-    .then(() => init())
-    .catch((error) => {
-      console.error(error);
-    });
-};
 // app.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
