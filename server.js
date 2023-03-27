@@ -23,10 +23,7 @@ const db = mysql.createConnection(
   console.log("Connected to the employeedata_db database.")
 );
 
-// need to figure out the viewing tables in console ALMOST DONE
-// console.logs reading as function DONE
-// adding via terminal/editing updating
-// returning to questions once prompts are finished. DONE
+// adding via terminal/ updating role
 
 function init() {
   inquirer
@@ -152,7 +149,6 @@ const addRole = () => {
       },
     ])
     .then((role) => {
-      // console.log(role)
       db.query("INSERT INTO roles SET ?", role);
       console.log("Added role title");
     })
