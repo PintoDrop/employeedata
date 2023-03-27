@@ -69,8 +69,8 @@ function init() {
           viewDepartments();
           break;
 
-        case "View all emplyoees":
-          viewEmployees();
+        case "View all employees":
+          viewWorkers();
           break;
 
         case "View all roles":
@@ -173,20 +173,6 @@ const updateEmployee = () => {
     .then(() => init());
 };
 
-const viewEmployees = () => {
-  // console.log("Viewing the employees");
-  db.promise()
-    .query("SELECT * FROM employees")
-    .then(([emp]) => {
-      console.table(emp);
-    })
-    .then(() => init())
-    .catch((error) => {
-      console.error(error);
-    });
-};
-
-
 const viewDepartments = () => {
   console.log("Viewing the departments");
   db.promise()
@@ -201,17 +187,30 @@ const viewDepartments = () => {
 };
 
 
+const viewWorkers = () => {
+  console.log("Viewing roles");
+  db.promise()
+    .query("SELECT * FROM employees")
+    .then(([emps]) => {
+      console.table(emps);
+    })
+    .then(() => init())
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
 const viewRoles = () => {
   console.log("Viewing roles");
   db.promise()
-  .query("SELECT * FROM roles")
-  .then(([rols]) => {
-    console.table(rols);
-  })
-  .then(() => init())
-  .catch((error) => {
-    console.error(error);
-  });
+    .query("SELECT * FROM roles")
+    .then(([rols]) => {
+      console.table(rols);
+    })
+    .then(() => init())
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 // app.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
