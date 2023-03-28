@@ -71,4 +71,8 @@ GIVEN a command-line application that accepts user input
 
 ## Screen-Shots
 
-![Screen Shot](./Images/mysqlscreenshot.JPG)
+![MySql Screenshot](./Images/mysqlscreenshot.JPG)
+
+![Seeds Screen Shot](./Images/seedsShot.JPG)
+
+![Schema screenshot](./Images/schemaShot.JPG)

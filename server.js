@@ -23,7 +23,6 @@ const db = mysql.createConnection(
   console.log("Connected to the employeedata_db database.")
 );
 
-// adding via terminal/ updating role
 
 function init() {
   inquirer
@@ -89,7 +88,7 @@ const addDepartment = () => {
       },
     ])
     .then((department) => {
-      // console.log(department)
+      console.log(department)
       db.query("INSERT INTO departments SET ?", department);
       console.log("Added department");
     })
@@ -218,4 +217,4 @@ const viewRoles = () => {
     });
 };
 
-// app.listen(PORT, () => console.log(`Go to http://localhost:${PORT}`));
+
