@@ -160,13 +160,22 @@ const updateEmployeeRole = () => {
   inquirer
     .prompt([
       {
-        message: "Which employee would you like to update?",
+        message: "Which employee would you like to update? (choose by employee ID)",
+        type: "input",
+        name: "id",
+      },
+      {
+        message: "What role is this employee changing too? (choose by role ID)",
         type: "input",
         name: "role_id",
       },
-      // .then function for what to do next
     ])
-    .then(() => init());
+      // .then function for what to do next
+      .then(employee => {
+        db.query(`UPDATE employees SET ? WHERE id = ${employee.id}`, employee);
+        console.log ("Employees role has been updated!"); 
+      }) 
+       .then(() => init());
 };
 
 const viewDepartments = () => {
