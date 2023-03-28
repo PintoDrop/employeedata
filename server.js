@@ -1,17 +1,9 @@
 const mysql = require("mysql2");
-// const PORT = 3001;
 const path = require("path");
-// const fs = require("fs");
 const inquirer = require("inquirer");
 const express = require("express");
 const cTable = require("console.table");
-// const table = cTable.getTable;
-// const app = require("express");
-// const db = mysql.createConnection('mysql://root:JuiceHead2&&@localhost:3306/employeedata_db')
 
-// app.use(express.json());
-// app.use(express.static(path.join(__dirname, "public")));
-// app.use(express.urlencoded({ extended: true }));
 
 const db = mysql.createConnection(
   {
